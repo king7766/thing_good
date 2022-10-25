@@ -1,0 +1,66 @@
+INSERT INTO Users (`ID`, `UDID`, `UserName`) VALUES (5,'5555','five')
+
+INSERT INTO Users (`UDID`, `UserName`) VALUES ('666','six')
+
+INSERT INTO Users (`UDID`) VALUES ('666')
+INSERT INTO Persons (`Name`) VALUES ('666')
+
+
+https://wetag.000webhostapp.com/index.php/user/update?udid=061b11678cad34f6&username=Pp
+===============================================================
+step for new API:
+1) bootstrap.php
+	a) add require_once (model)
+2) index.php
+	a) add require php (controller)
+	b) add uri path
+3) xxx.php
+4) xxxController.php
+
+================================================================
+API example
+https://wetag.000webhostapp.com/index.php/user/init?udid=061b11678cad34f6&username=Android%20SDK%20built%20for%20x86
+
+https://wetag.000webhostapp.com/index.php/room/insert?room_name=hihi&creator_id=1
+
+http://18.163.129.246/wetag/index.php/user/init?udid=bbbbb&username=mary
+http://18.163.129.246/wetag/index.php/user/list?limit=20
+ http://18.163.129.246/wetag/index.php/user/update?udid=061b11678cad34f6&username=TaiTaiii
+http://18.163.129.246/wetag/index.php/user/updateAvator?udid=061b11678cad34f6&avator=2
+
+http://18.163.129.246/wetag/index.php/room/insert?room_name=hihi&creator_id=1
+http://18.163.129.246/wetag/index.php/room/updateRoomStatus?room_id=1&room_status=C
+
+http://18.163.129.246/wetag/index.php/mapping/get?room_id=1
+http://18.163.129.246/wetag/index.php/mapping/startGameSetup?room_id=349
+
+http://18.163.129.246/wetag/index.php/card/payCard?room_id=208&user_id=1
+http://18.163.129.246/wetag/index.php/card/getAllCards
+http://18.163.129.246/wetag/index.php/card/cardPayLog?room_id=208
+==============================================================
+Build APK
+
+Step 1: Go to the root of the project in the terminal and run the below command:
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+Step 2: Go to android directory:
+
+cd android
+./gradlew clean
+
+Step 3: Now in this android folder, run this command
+
+./gradlew assembleDebug
+
+There! you’ll find the apk file in the following path:
+yourProject/android/app/build/outputs/apk/debug/app-debug.apk
+
+===================================================================
+ref:
+https://code.tutsplus.com/articles/best-react-native-app-templates--cms-29602
+
+https://socket.io/docs/v3/rooms/
+
+http://paletton.com/#uid=72r0u0k2EGk00++0IRX5Hvw9Zr0
